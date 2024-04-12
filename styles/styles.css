@@ -1,0 +1,57 @@
+body, html{
+    background-color:skyblue;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+}
+
+#game-introduction {
+    display: flex;
+    justify-content: space-between;
+    background-color: none;
+    padding: 10px;
+    }
+    h3 {
+        text-align: center;
+    }
+#start-button {
+    display: flex;
+
+background-color: blue;
+text-align: center;
+justify-content: center;
+width: 100px;
+height:40px;
+    }
+
+div#game-screen {
+
+    display: none;
+    border: 10px solid;
+    justify-content: center;
+    text-align: center; /* Center content horizontally */
+    align-content: center;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden;
+    position:relative;
+    background-image: url(../images/Road.png);
+    background-size: cover;
+    background-position: center;
+    animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+      background-position: 0 -1000px;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
+  }
+  #game-end {
+    display: none;
+  }
