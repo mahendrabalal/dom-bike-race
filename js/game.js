@@ -13,6 +13,8 @@ class Game {
     this.gameIsOver = false;
     this.gameIntervalId = 0;
     this.gameLoopFrequency = Math.round(1000 / 60);
+    this.bikecrashSound = new Audio("../sounds/motorbike crash.wav");
+    this.bikeRidingSound = new Audio("../sounds/bike riding.wav");
     this.player = new Player(
       this.gameScreen,
       300,
@@ -29,6 +31,7 @@ class Game {
     this.gameScreen.style.display = "block";
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
+      this.bikeRidingSound.play();
     }, this.gameLoopFrequency);
   }
   restart() {
@@ -75,6 +78,7 @@ class Game {
         obstacle.element.remove();
         this.lives--;
         this.livesElement.textContent = this.lives;
+        this.bikecrashSound.play();
         i--;
       } else if (obstacle.top > this.height) {
         obstacle.element.remove();
@@ -87,6 +91,10 @@ class Game {
         if (this.score % 5 === 0) {
           this.lives++;
           this.livesElement.textContent = this.lives;
+          //reset score to 0;
+          this.score = 0;
+          this.scoreElement.textContent = 0; 
+
         }
       }
     }
@@ -103,5 +111,6 @@ class Game {
     this.gameIsOver = true;
     this.gameScreen.style.display = "none";
     this.endScreen.style.display = "block";
+    this.bikeRidingSound.pause();
   }
 }

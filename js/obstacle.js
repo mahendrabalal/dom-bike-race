@@ -2,7 +2,7 @@ class Obstacle extends Common {
     constructor (gameScreen) {
         super(
             gameScreen,
-            Math.floor(Math.random() * 300 +70),
+            Math.floor(Math.random()* (500-250 +1)) +250,
             0,
             100,
             150,
