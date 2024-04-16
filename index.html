@@ -9,18 +9,29 @@
 <body>
 <!--this is introduction page-->
     <div id="game-introduction">
-        <img src="/images/logo.png" alt="logo" height="200" width="200">
+        <header>
+        <img src="/images/logo1.png" alt="logo" height="200" width="200">
         <h3>welcome to racing bike game</h3>
-    </div>
-    <button id="start-button">Ride The bike</button>
+        <p>This is the biggest motorbike riding game ever in the worll</p></aside>
+        </header>
+       <button id="start-button">Ride The bike</button></div>
+    
+   
 
     <!--this is game page currently hidden via css-->
-
-    <div id="game-screen"></div>
+    <div id="game-container">
+        <div>
+            <p>Score: <span id="score"></span></p>
+            <p>Lives: <span id="lives"></span></p>
+        </div>
+        <div id="game-screen"></div>
+    </div>
 
 
 <!--this is end gamescreen-->
 <div id="game-end">
+    <h2>Game is over</h2>
+    <br>
     <button id="restart-button">Restart</button>
 </div>
 

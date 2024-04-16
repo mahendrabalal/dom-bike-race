@@ -1,43 +1,45 @@
-body, html{
-    background-color:skyblue;
+body{
+    background-color:rgba(164, 155, 155, 0.912);
     padding: 0;
-    height: 100%;
-    align-items: center;
+    margin: 0;
+    text-align: center;
 }
 
 #game-introduction {
-    display: flex;
-    justify-content: space-between;
-    background-color: none;
+    text-align: center;
     padding: 10px;
     }
     h3 {
         text-align: center;
     }
 #start-button {
-    display: flex;
 
-background-color: blue;
+background-color: rgb(227, 227, 240);
 text-align: center;
 justify-content: center;
-width: 100px;
-height:40px;
+width: 150px;
+height:50px;
     }
+
+#game-container {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px auto;
+        justify-content: center;
+      }
 
 div#game-screen {
 
     display: none;
-    border: 10px solid;
-    justify-content: center;
-    text-align: center; /* Center content horizontally */
-    align-content: center;
-    padding: 20px;
-    margin: 20px;
+    width: 100%;
+    padding:0;
+    margin: auto;
     overflow: hidden;
     position:relative;
     background-image: url(../images/Road.png);
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    /*background-position: center;*/
     animation: slide 5s linear infinite;
 }
 

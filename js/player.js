@@ -12,16 +12,36 @@ class Player extends Common {
 
         if(this.left < 10) {
             this.left = 10;
+        }
         if(this.top < 10) {
             this.top = 10;
         }
         if(this.left > this.gameScreen.offsetWidth - this.width - 10) {
             this.left = this.gameScreen.offsetWidth- this.width - 10;
         }
-        if(this.top > this.gameScreen.offsetWidth -this.width - 10) {
-            this.top = this.gameScreen.offsetWidth - this.width -10;
+        if(this.top > this.gameScreen.offsetHeight -this.height - 10) {
+            this.top = this.gameScreen.offsetHeight - this.height -10;
         }
+        
         this.updatePosition();
-        }
+
     }
-}
+    didCollide(obstacle) {
+        const playerRect = this.element.getBoundingClientRect();
+        const obstacleRect = obstacle.element.getBoundingClientRect();
+        console.log('Player Rect:', playerRect);
+        console.log('Obstacle Rect:', obstacleRect);
+    
+        const collided = (
+            playerRect.left < obstacleRect.right &&
+            playerRect.right > obstacleRect.left &&
+            playerRect.top < obstacleRect.bottom &&
+            playerRect.bottom > obstacleRect.top
+        );
+    
+        console.log('Collision:', collided);
+    
+        return collided;
+    }
+    
+    }
