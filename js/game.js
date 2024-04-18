@@ -47,7 +47,7 @@ class Game {
       300,
       150,
       200,
-      "../images/player1.webp"
+      "./images/player1.webp"
     );
     this.obstacles.forEach(obstacle => {
       obstacle.element.remove();
