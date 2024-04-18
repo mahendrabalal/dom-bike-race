@@ -13,8 +13,8 @@ class Game {
     this.gameIsOver = false;
     this.gameIntervalId = 0;
     this.gameLoopFrequency = Math.round(1000 / 60);
-    this.bikecrashSound = new Audio("../sounds/motorbike crash.wav");
-    this.bikeRidingSound = new Audio("../sounds/bike riding.wav");
+    this.bikecrashSound = new Audio("./sounds/motorbike crash.wav");
+    this.bikeRidingSound = new Audio("./sounds/bike riding.wav");
     this.player = new Player(
       this.gameScreen,
       300,
