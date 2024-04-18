@@ -6,7 +6,7 @@ class Obstacle extends Common {
             0,
             100,
             150,
-            "../images/obstacle.png"
+            "./images/obstacle.png"
         );
     }
     move() {

@@ -21,7 +21,7 @@ class Game {
       300,
       100,
       150,
-      "../images/player1.webp"
+      "./images/player1.webp"
     );
   }
   start() {
