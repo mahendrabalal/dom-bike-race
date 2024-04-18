@@ -66,14 +66,30 @@ class Game {
       this.gameIsOver();
     }
   }
+
+  if(gameIsOver) {
+    clearInterval(this.gameIntervalId);
+    let highestScoreFromLS = JSON.parse(localStorage.getItem("highscores"));
+    if(highestScoreFromLS) {
+      highestScoreFromLS.push(this.score);
+      highestScoreFromLS.sort((a, b) => b-a);
+      highestScoreFromLS = highestScoreFromLS.slice(0,3);
+      localStorage.setItem("highscores", JSON.stringify(highestscoresFromLS));
+    } else {
+      localStorage.setItem("highscores", JSON.stringify([this.score]))
+    }
+  }
+
+
   update() {
     this.player.move();
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
       obstacle.move();
-
+    
       //collision
-      if (this.player.didCollide(obstacle)) {
+      
+      if(this.player.didCollide(obstacle, 10)) {
         this.obstacles.splice(i, 1);
         obstacle.element.remove();
         this.lives--;
